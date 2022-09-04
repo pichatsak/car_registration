@@ -14,7 +14,6 @@ class _LoginAPPState extends State<LoginAPP> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -122,25 +121,30 @@ class _LoginAPPState extends State<LoginAPP> {
                   //   ],
                   // ),
                   const SizedBox(height: 60),
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).pushNamed("/home");
-                    },
-                    highlightColor: color,
-                    splashColor: color,
-                    hoverColor: color,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color:Colors.blue,
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    height: 60,
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).pushNamed("/home");
+                        },
                         borderRadius: BorderRadius.circular(10),
-                      ),
-                      height: 60,
-                      child: const Center(
-                        child: Text("เข้าสู่ระบบ",
-                            style: TextStyle(
-                                fontSize: 17,
-                                color: Colors.white,
-                                fontFamily: "Prompt-Medium")),
+                        highlightColor: const Color.fromARGB(255, 225, 237, 247)
+                            .withOpacity(0.4),
+                        splashColor: const Color.fromARGB(221, 131, 194, 245)
+                            .withOpacity(0.5),
+                        child: const Center(
+                          child: Text("เข้าสู่ระบบ",
+                              style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.white,
+                                  fontFamily: "Prompt-Medium")),
+                        ),
                       ),
                     ),
                   ),

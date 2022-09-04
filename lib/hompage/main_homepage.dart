@@ -11,7 +11,11 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(automaticallyImplyLeading : false,toolbarHeight:0,backgroundColor: Colors.blue),
+    return Scaffold(
+      appBar: AppBar(
+          automaticallyImplyLeading: false,
+          toolbarHeight: 0,
+          backgroundColor: Colors.blue),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Column(
@@ -70,6 +74,7 @@ class _HomepageState extends State<Homepage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
+                      borderRadius: BorderRadius.circular(90),
                       onTap: () {},
                       child: Container(
                         height: 80,
@@ -88,6 +93,7 @@ class _HomepageState extends State<Homepage> {
                     Padding(
                       padding: const EdgeInsets.only(left: 30, right: 30),
                       child: InkWell(
+                        borderRadius: BorderRadius.circular(90),
                         onTap: () {},
                         child: Container(
                           height: 80,
@@ -105,6 +111,7 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
                     InkWell(
+                      borderRadius: BorderRadius.circular(90),
                       onTap: () {},
                       child: Container(
                         height: 80,
@@ -127,6 +134,7 @@ class _HomepageState extends State<Homepage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
+                      borderRadius: BorderRadius.circular(90),
                       onTap: () {},
                       child: Container(
                         height: 80,
@@ -145,6 +153,7 @@ class _HomepageState extends State<Homepage> {
                     Padding(
                       padding: const EdgeInsets.only(left: 30, right: 30),
                       child: InkWell(
+                        borderRadius: BorderRadius.circular(90),
                         onTap: () {},
                         child: Container(
                           height: 80,
@@ -162,6 +171,7 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
                     InkWell(
+                      borderRadius: BorderRadius.circular(90),
                       onTap: () {},
                       child: Container(
                         height: 80,
@@ -184,6 +194,7 @@ class _HomepageState extends State<Homepage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
+                      borderRadius: BorderRadius.circular(90),
                       onTap: () {},
                       child: Container(
                         height: 80,
@@ -202,6 +213,7 @@ class _HomepageState extends State<Homepage> {
                     Padding(
                       padding: const EdgeInsets.only(left: 30, right: 30),
                       child: InkWell(
+                        borderRadius: BorderRadius.circular(90),
                         onTap: () {},
                         child: Container(
                           height: 80,
@@ -219,6 +231,7 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
                     InkWell(
+                      borderRadius: BorderRadius.circular(90),
                       onTap: () {},
                       child: Container(
                         height: 80,
@@ -242,25 +255,30 @@ class _HomepageState extends State<Homepage> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 10, right: 10),
-                      child: InkWell(
-                        onTap: () {},
-                        child: ClipPath(
-                          clipper: ProfileImageCustomShape(),
-                          child: ClipRRect(
-                            child: Container(
-                              height: 40,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                  color: Colors.black12,
-                                  borderRadius: BorderRadius.circular(2)),
-                              child: Center(
-                                  child: Container(
-                                margin: const EdgeInsets.only(left: 10),
-                                child: const Text(
-                                  "X",
-                                  style: TextStyle(fontSize: 20),
-                                ),
-                              )),
+                      child: ClipPath(
+                        clipper: ProfileImageCustomShape(),
+                        child: ClipRRect(
+                          child: Container(
+                            height: 40,
+                            width: 60,
+                            decoration: BoxDecoration(
+                                color: Colors.black12,
+                                borderRadius: BorderRadius.circular(2)),
+                            child: Material(
+                              color: Colors.transparent,
+                              child: InkWell(
+                                highlightColor:
+                                    const Color.fromARGB(52, 0, 0, 0),
+                                onTap: () {},
+                                child: Center(
+                                    child: Container(
+                                  margin: const EdgeInsets.only(left: 10),
+                                  child: const Text(
+                                    "X",
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                )),
+                              ),
                             ),
                           ),
                         ),
@@ -269,6 +287,7 @@ class _HomepageState extends State<Homepage> {
                     Padding(
                       padding: const EdgeInsets.only(left: 30, right: 30),
                       child: InkWell(
+                        borderRadius: BorderRadius.circular(90),
                         onTap: () {},
                         child: Container(
                           height: 80,
@@ -285,22 +304,31 @@ class _HomepageState extends State<Homepage> {
                         ),
                       ),
                     ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.of(context).pushNamed("/search");
-                      },
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
+                    Container(
+                      height: 80,
+                      width: 80,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
                           borderRadius: BorderRadius.circular(10),
+                          highlightColor:
+                              const Color.fromARGB(255, 225, 237, 247)
+                                  .withOpacity(0.4),
+                          splashColor: const Color.fromARGB(221, 131, 194, 245)
+                              .withOpacity(0.5),
+                          onTap: () {
+                            Navigator.of(context).pushNamed("/search");
+                          },
+                          child: const Center(
+                              child: Text(
+                            "ค้นหา",
+                            style: TextStyle(fontSize: 20, color: Colors.white),
+                          )),
                         ),
-                        child: const Center(
-                            child: Text(
-                          "ค้นหา",
-                          style: TextStyle(fontSize: 20, color: Colors.white),
-                        )),
                       ),
                     ),
                   ],
